@@ -15,3 +15,28 @@ while minas_colocadas < TOTAL_MINAS:
     if not tablero_minas[fila][columna]:
         tablero_minas[fila][columna] = True
         minas_colocadas += 1
+
+explosiones = 0
+casillas_liberadas = 0
+total_casillas_sin_minas = FILAS * COLUMNAS - TOTAL_MINAS
+
+def mostrar_tablero():
+    print("================")
+    print("  1 2 3 4 5 6 7")
+    for i in range(FILAS):
+        print(f"{i+1}", end=" ")
+        for j in range(COLUMNAS):
+            print(tablero_visible[i][j], end=" ")
+        print()
+    print("================")
+
+def jugar():
+    global explosiones, casillas_liberadas
+    
+    print("¡Bienvenido al Buscaminas!")
+    print(f"Debes evitar que te exploten {EXPLOSIONES_PERMITIDAS} minas.")
+    print()
+    
+    mostrar_tablero()
+    
+    while explosiones < EXPLOSIONES_PERMITIDAS and casillas_liberadas < total_casillas_sin_minas:
