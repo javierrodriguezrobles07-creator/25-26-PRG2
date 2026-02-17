@@ -56,3 +56,22 @@ for (int i = 0; i < FILAS; i++) {
             
             mostrarTablero(tableroVisible);
         }
+              if (casillasLiberadas >= CASILLAS_SIN_MINAS) {
+            System.out.println("\n¡FELICIDADES! Liberaste todas las casillas sin minas. ¡GANASTE!");
+        }
+        
+        sc.close();
+    }
+    
+    public static void mostrarTablero(char[][] tablero) {
+        System.out.println("================");
+        System.out.println("  1 2 3 4 5 6 7");
+        for (int i = 0; i < FILAS; i++) {
+            System.out.print((i + 1) + " ");
+            for (int j = 0; j < COLUMNAS; j++) {
+                System.out.print(tablero[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("================");
+    }
