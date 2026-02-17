@@ -40,3 +40,8 @@ def jugar():
     mostrar_tablero()
     
     while explosiones < EXPLOSIONES_PERMITIDAS and casillas_liberadas < total_casillas_sin_minas:
+
+    try:
+
+            x = int(input("Ingrese X: ")) - 1
+            y = int(input("Ingrese Y: ")) - 1
