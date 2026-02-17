@@ -1,0 +1,7 @@
+import random
+
+FILAS = 5
+COLUMNAS = 7
+TOTAL_MINAS = 5
+EXPLOSIONES_PERMITIDAS = 3
+
