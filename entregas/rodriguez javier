@@ -8,4 +8,10 @@ EXPLOSIONES_PERMITIDAS = 3
 tablero_visible = [['-' for _ in range(COLUMNAS)] for _ in range(FILAS)]
 tablero_minas = [[False for _ in range(COLUMNAS)] for _ in range(FILAS)]
 
-
+minas_colocadas = 0
+while minas_colocadas < TOTAL_MINAS:
+    fila = random.randint(0, FILAS - 1)
+    columna = random.randint(0, COLUMNAS - 1)
+    if not tablero_minas[fila][columna]:
+        tablero_minas[fila][columna] = True
+        minas_colocadas += 1
