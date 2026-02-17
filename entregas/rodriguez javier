@@ -109,7 +109,21 @@ for (int i = 0; i < FILAS; i++) {
                 }
             } catch (Exception e) {
                 System.out.println("Por favor, ingrese números válidos.");
-                sc.nextLine(); // Limpiar el buffer
+                sc.nextLine();
             }
         }
     }
+    public static String verificarCasilla(int x, int y, boolean[][] tableroMinas, char[][] tableroVisible) {
+        System.out.println("----------------");
+        
+        if (tableroMinas[y][x]) {
+            tableroVisible[y][x] = '*';
+            System.out.println("Mina!");
+            return "mina";
+        } else {
+            tableroVisible[y][x] = '.';
+            System.out.println("Libre!");
+            return "libre";
+        }
+    }
+}
