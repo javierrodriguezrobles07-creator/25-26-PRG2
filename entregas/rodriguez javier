@@ -49,3 +49,10 @@ def jugar():
             if x < 0 or x >= COLUMNAS or y < 0 or y >= FILAS:
                 print("Coordenadas fuera del tablero. Intente nuevamente.")
                 continue
+
+            if tablero_visible[y][x] != '-':
+                print("Esta casilla ya fue descubierta. Intente otra.")
+                continue
+            
+            print("----------------")
+            
