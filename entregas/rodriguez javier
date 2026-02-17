@@ -45,3 +45,7 @@ def jugar():
 
             x = int(input("Ingrese X: ")) - 1
             y = int(input("Ingrese Y: ")) - 1
+
+            if x < 0 or x >= COLUMNAS or y < 0 or y >= FILAS:
+                print("Coordenadas fuera del tablero. Intente nuevamente.")
+                continue
