@@ -55,4 +55,23 @@ def jugar():
                 continue
             
             print("----------------")
+
+             if tablero_minas[y][x]:
+                explosiones += 1
+                tablero_visible[y][x] = '*'
+                print("Mina!")
+                print(f"Te han explotado {explosiones} de {EXPLOSIONES_PERMITIDAS} minas permitidas.")
+            else:
+                casillas_liberadas += 1
+                tablero_visible[y][x] = '.'
+                print("Libre!")
+                print(f"Casillas restantes: {total_casillas_sin_minas - casillas_liberadas}")
+            
+            mostrar_tablero()
+            
+        except ValueError:
+            print("Por favor, ingrese números válidos.")
+        except KeyboardInterrupt:
+            print("\nJuego terminado.")
+            break
             
