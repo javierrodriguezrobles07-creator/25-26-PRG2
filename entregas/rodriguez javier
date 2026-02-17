@@ -90,3 +90,26 @@ for (int i = 0; i < FILAS; i++) {
             }
         }
     }
+    public static int[] obtenerCoordenadas() {
+        int[] coordenadas = new int[2];
+        
+        while (true) {
+            try {
+                System.out.print("Ingrese X: ");
+                int x = sc.nextInt() - 1;
+                System.out.print("Ingrese Y: ");
+                int y = sc.nextInt() - 1;
+                
+                if (x >= 0 && x < COLUMNAS && y >= 0 && y < FILAS) {
+                    coordenadas[0] = x;
+                    coordenadas[1] = y;
+                    return coordenadas;
+                } else {
+                    System.out.println("Coordenadas fuera del tablero. Intente nuevamente.");
+                }
+            } catch (Exception e) {
+                System.out.println("Por favor, ingrese números válidos.");
+                sc.nextLine(); // Limpiar el buffer
+            }
+        }
+    }
