@@ -50,4 +50,18 @@ public class Fraccion {
     public String toString() {
     return numerador + "/" + denominador;
     }
+    
+    public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (!(obj instanceof Fraccion)) return false;
+
+    Fraccion f = (Fraccion) obj;
+    return this.numerador * f.denominador == f.numerador * this.denominador;
+}
+
+public int compareTo(Fraccion f) {
+    int a = this.numerador * f.denominador;
+    int b = f.numerador * this.denominador;
+    return Integer.compare(a, b);
+}
 }
