@@ -45,5 +45,9 @@ public class Fraccion {
     }
     public double aDecimal() {
     return (double) numerador / denominador;
+    
+    @Override
+    public String toString() {
+    return numerador + "/" + denominador;
     }
 }
