@@ -9,4 +9,10 @@ public class Fraccion {
         this.numerador = numerador;
         this.denominador = denominador;
     }
+
+    public Fraccion sumar(Fraccion f) {
+        int num = this.numerador * f.denominador + f.numerador * this.denominador;
+        int den = this.denominador * f.denominador;
+        return new Fraccion(num, den);
+    }
 }
