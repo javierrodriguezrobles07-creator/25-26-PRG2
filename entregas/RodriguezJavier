@@ -43,4 +43,7 @@ public class Fraccion {
     public Fraccion inversa() {
         return new Fraccion(this.denominador, this.numerador);
     }
+    public double aDecimal() {
+    return (double) numerador / denominador;
+    }
 }
