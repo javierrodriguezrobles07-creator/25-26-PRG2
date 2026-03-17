@@ -15,4 +15,24 @@ public class Fraccion {
         int den = this.denominador * f.denominador;
         return new Fraccion(num, den);
     }
+
+    public Fraccion restar(Fraccion f) {
+        int num = this.numerador * f.denominador - f.numerador * this.denominador;
+        int den = this.denominador * f.denominador;
+        return new Fraccion(num, den);
+    }
+
+    public Fraccion multiplicar(Fraccion f) {
+        return new Fraccion(
+            this.numerador * f.numerador,
+            this.denominador * f.denominador
+        );
+    }
+
+    public Fraccion dividir(Fraccion f) {
+        return new Fraccion(
+            this.numerador * f.denominador,
+            this.denominador * f.numerador
+        );
+    }
 }
