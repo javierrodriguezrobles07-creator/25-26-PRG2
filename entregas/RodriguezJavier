@@ -57,11 +57,26 @@ public class Fraccion {
 
     Fraccion f = (Fraccion) obj;
     return this.numerador * f.denominador == f.numerador * this.denominador;
-}
+    }
 
-public int compareTo(Fraccion f) {
+    public int compareTo(Fraccion f) {
     int a = this.numerador * f.denominador;
     int b = f.numerador * this.denominador;
     return Integer.compare(a, b);
-}
+    }
+
+    private int mcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+    }
+
+    private void simplificar() {
+    int mcd = mcd(Math.abs(numerador), Math.abs(denominador));
+    numerador /= mcd;
+    denominador /= mcd;
+    }
 }
